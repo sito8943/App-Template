@@ -5,6 +5,12 @@ import Loading from "../../components/loading/Loading";
 
 import { useContext } from "../../context/ContextProvider";
 import { connectionState } from "../../services/get";
+import { colors } from "../../utils/colors";
+
+import { Paragraph } from "../../components/theme/ThemeComponents";
+import { Header3 } from "../../components/theme/headers/Headers";
+import { Label } from "../../components/theme/form/Label";
+import Card from "../../components/theme/card/Card";
 
 const Forgot = (props) => {
   const [loading, setLoading] = useState(true);
@@ -13,7 +19,7 @@ const Forgot = (props) => {
 
   const handleInput = (e) => {
     switch (e.target.id) {
-      case "name":
+      default: //name
         return setName(e.target.value);
     }
   };
@@ -39,16 +45,9 @@ const Forgot = (props) => {
   }, []);
 
   return (
-    <div
-      className="uk-animation-scale-down"
-      data-uk-grid
-      style={{ alignItems: "center", height: "100vh" }}
-    >
+    <div className="uk-animation-scale-down main-view" data-uk-grid>
       <div className="uk-width-expand"></div>
-      <div
-        className="uk-card uk-card-default uk-card-body"
-        style={{ padding: " 50px 75px" }}
-      >
+      <Card>
         {loading ? (
           <Loading />
         ) : (
@@ -57,14 +56,14 @@ const Forgot = (props) => {
               <img
                 src="/logo512.png"
                 alt="app-logo"
-                style={{ height: "120px", marginRight: "20px" }}
+                className="app-main-logo"
               />
-              <h3 className="uk-card-title">{props.texts.Title}</h3>
+              <Header3 title={props.texts.Title} />
             </div>
-            <p>{props.texts.Paragraph}</p>
+            <Paragraph paragraph={props.texts.Paragraph} />
             <form onSubmit={send}>
               <fieldset className="uk-fieldset">
-                <legend className="uk-legend">{props.texts.Labels.User}</legend>
+                <Label text={props.texts.Labels.User} />
                 <div className="uk-margin">
                   <input
                     id="name"
@@ -74,6 +73,17 @@ const Forgot = (props) => {
                     type="text"
                     placeholder={props.texts.Placeholders.User}
                     required
+                    style={{
+                      border: `1px solid ${
+                        contextState.mode === "light"
+                          ? colors.LightInputBorderColor
+                          : colors.DarkInputBorderColor
+                      }`,
+                      color:
+                        contextState.mode === "light"
+                          ? colors.LightFontColors
+                          : colors.DarkFontColors,
+                    }}
                   />
                 </div>
               </fieldset>
@@ -82,8 +92,13 @@ const Forgot = (props) => {
                   {props.texts.Buttons.Send}
                 </button>
                 <Link
-                  className="uk-button uk-button-default"
-                  style={{ textDecoration: "none", marginLeft: "20px" }}
+                  className="uk-button uk-button-default return-button"
+                  style={{
+                    color:
+                      contextState.mode === "light"
+                        ? colors.LightFontColors
+                        : colors.DarkFontColors,
+                  }}
                   to="/"
                 >
                   {props.texts.Buttons.Return}
@@ -92,7 +107,7 @@ const Forgot = (props) => {
             </form>
           </>
         )}
-      </div>
+      </Card>
       <div className="uk-width-expand"></div>
     </div>
   );

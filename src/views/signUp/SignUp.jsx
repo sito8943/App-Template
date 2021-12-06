@@ -6,6 +6,13 @@ import Loading from "../../components/loading/Loading";
 import { useContext } from "../../context/ContextProvider";
 import { connectionState } from "../../services/get";
 
+import { colors } from "../../utils/colors";
+import { LinkButton, Paragraph } from "../../components/theme/ThemeComponents";
+import { Header3 } from "../../components/theme/headers/Headers";
+import { Label } from "../../components/theme/form/Label";
+import Card from "../../components/theme/card/Card";
+import Divider from "../../components/theme/divider/Divider";
+
 const SignUp = (props) => {
   const [loading, setLoading] = useState(true);
   const [name, setName] = useState("");
@@ -41,6 +48,8 @@ const SignUp = (props) => {
         return setPassword(e.target.value);
       case "passwordR":
         return setPasswordR(e.target.value);
+      default:
+        break;
     }
   };
 
@@ -50,16 +59,9 @@ const SignUp = (props) => {
   }, []);
 
   return (
-    <div
-      className="uk-animation-scale-down"
-      data-uk-grid
-      style={{ alignItems: "center", height: "100vh" }}
-    >
+    <div className="uk-animation-scale-down main-view" data-uk-grid>
       <div className="uk-width-expand"></div>
-      <div
-        className="uk-card uk-card-default uk-card-body"
-        style={{ padding: " 50px 75px" }}
-      >
+      <Card>
         {loading ? (
           <Loading />
         ) : (
@@ -68,14 +70,14 @@ const SignUp = (props) => {
               <img
                 src="/logo512.png"
                 alt="app-logo"
-                style={{ height: "120px", marginRight: "20px" }}
+                className="app-main-logo"
               />
-              <h3 className="uk-card-title">{props.texts.Title}</h3>
+              <Header3 title={props.texts.Title} />
             </div>
-            <p>{props.texts.Paragraph}</p>
+            <Paragraph paragraph={props.texts.Paragraph} />
             <form onSubmit={signUp}>
               <fieldset className="uk-fieldset">
-                <legend className="uk-legend">{props.texts.Labels.User}</legend>
+                <Label text={props.texts.Labels.User} />
                 <div className="uk-margin">
                   <input
                     id="name"
@@ -85,13 +87,22 @@ const SignUp = (props) => {
                     type="text"
                     placeholder={props.texts.Placeholders.User}
                     required
+                    style={{
+                      border: `1px solid ${
+                        contextState.mode === "light"
+                          ? colors.LightInputBorderColor
+                          : colors.DarkInputBorderColor
+                      }`,
+                      color:
+                        contextState.mode === "light"
+                          ? colors.LightFontColors
+                          : colors.DarkFontColors,
+                    }}
                   />
                 </div>
               </fieldset>
               <fieldset className="uk-fieldset">
-                <legend className="uk-legend">
-                  {props.texts.Labels.Email}
-                </legend>
+                <Label text={props.texts.Labels.Email} />
                 <div className="uk-margin">
                   <input
                     id="email"
@@ -101,13 +112,22 @@ const SignUp = (props) => {
                     type="text"
                     placeholder={props.texts.Placeholders.Email}
                     required
+                    style={{
+                      border: `1px solid ${
+                        contextState.mode === "light"
+                          ? colors.LightInputBorderColor
+                          : colors.DarkInputBorderColor
+                      }`,
+                      color:
+                        contextState.mode === "light"
+                          ? colors.LightFontColors
+                          : colors.DarkFontColors,
+                    }}
                   />
                 </div>
               </fieldset>
               <fieldset className="uk-fieldset">
-                <legend className="uk-legend">
-                  {props.texts.Labels.Password}
-                </legend>
+                <Label text={props.texts.Labels.Password} />
                 <div className="uk-margin">
                   <input
                     id="password"
@@ -117,13 +137,22 @@ const SignUp = (props) => {
                     type="password"
                     placeholder={props.texts.Placeholders.Password}
                     required
+                    style={{
+                      border: `1px solid ${
+                        contextState.mode === "light"
+                          ? colors.LightInputBorderColor
+                          : colors.DarkInputBorderColor
+                      }`,
+                      color:
+                        contextState.mode === "light"
+                          ? colors.LightFontColors
+                          : colors.DarkFontColors,
+                    }}
                   />
                 </div>
               </fieldset>
               <fieldset className="uk-fieldset">
-                <legend className="uk-legend">
-                  {props.texts.Labels.PasswordR}
-                </legend>
+                <Label text={props.texts.Labels.PasswordR} />
                 <div className="uk-margin">
                   <input
                     id="passwordR"
@@ -133,6 +162,17 @@ const SignUp = (props) => {
                     type="password"
                     placeholder={props.texts.Placeholders.PasswordR}
                     required
+                    style={{
+                      border: `1px solid ${
+                        contextState.mode === "light"
+                          ? colors.LightInputBorderColor
+                          : colors.DarkInputBorderColor
+                      }`,
+                      color:
+                        contextState.mode === "light"
+                          ? colors.LightFontColors
+                          : colors.DarkFontColors,
+                    }}
                   />
                 </div>
               </fieldset>
@@ -141,23 +181,23 @@ const SignUp = (props) => {
                   {props.texts.Buttons.SignUp}
                 </button>
                 <Link
-                  className="uk-button uk-button-default"
-                  style={{ textDecoration: "none", marginLeft: "20px" }}
+                  className="uk-button uk-button-default return-button"
+                  style={{
+                    color:
+                      contextState.mode === "light"
+                        ? colors.LightFontColors
+                        : colors.DarkFontColors,
+                  }}
                   to="/"
                 >
                   {props.texts.Buttons.Return}
                 </Link>
               </div>
             </form>
-            <hr />
-            <div className="uk-button-group">
-              <Link className="uk-link-muted" to="/forgot">
-                {props.texts.Buttons.Forgot}
-              </Link>
-            </div>
+            <Divider />
           </>
         )}
-      </div>
+      </Card>
       <div className="uk-width-expand"></div>
     </div>
   );
