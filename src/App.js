@@ -70,7 +70,7 @@ const App = () => {
               <Route
                 index
                 element={
-                  contextState.user.name == "" ? (
+                  contextState.user.name === undefined ? (
                     <Login texts={GetTexts(contextState.lang, "Login")} />
                   ) : (
                     <Main texts={GetTexts(contextState.lang, "Main")} />
