@@ -43,7 +43,7 @@
   "version": "1.0.0",
   "description": "Chat in react",
   "main": "index.js",
-  "repository": "https://github.com/SitoNumbis/Phrase-Wallpaper.git ",
+  "repository": "https://github.com/orlandev/server-express-firebase.git",
   "keywords": [
     "chat",
     "react"
