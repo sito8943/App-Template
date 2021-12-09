@@ -1,5 +1,26 @@
 /**
  *
+ * @param {number} from
+ * @param {number} to
+ */
+ export const GenerateRandomNumber = (from, to) => {
+  const ran = Math.floor(Math.random() * to + from);
+  return ran;
+};
+
+/**
+ * @param {string[]} list
+ */
+export const GetRandomOf = (list) => {
+  const ran = Math.random() * list.length;
+  console.log(list);
+  console.log(ran);
+  console.log(list[Math.floor(ran)]);
+  return list[Math.floor(ran)];
+};
+
+/**
+ *
  * @param {string} name
  * @param {object[]} otherUsers
  */

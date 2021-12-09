@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 
 import { useContext } from "../../../context/ContextProvider";
 import { colors } from "../../../utils/colors";
+
+import "./style.scss";
 
 const Card = (props) => {
   const { contextState, setContextState } = useContext();

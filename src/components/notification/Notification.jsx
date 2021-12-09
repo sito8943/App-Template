@@ -1,8 +1,10 @@
 import UIkit from "uikit";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import { useContext } from "../../context/ContextProvider";
+
+import "./style.scss";
 
 const Notification = (props) => {
   const { contextState, setContextState } = useContext();

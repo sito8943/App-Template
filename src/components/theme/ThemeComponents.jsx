@@ -3,8 +3,6 @@ import React from "react";
 import { colors } from "../../utils/colors";
 import { useContext } from "../../context/ContextProvider";
 
-import { Link as RouterLink } from "react-router-dom";
-
 export const Paragraph = (props) => {
   const { contextState, setContextState } = useContext();
   return (
@@ -20,22 +18,6 @@ export const Paragraph = (props) => {
     </p>
   );
 };
-export const LinkButton = (props) => {
-  const { contextState, setContextState } = useContext();
-  return (
-    <div
-      className="uk-button uk-button-default uk-link-muted return-button "
-      style={{
-        color:
-          contextState.mode === "light"
-            ? colors.LightFontColors
-            : colors.DarkFontColors,
-      }}
-    >
-      {props.children}
-    </div>
-  );
-};
 
 export const IconButton = (props) => {
   const { contextState, setContextState } = useContext();
@@ -44,7 +26,6 @@ export const IconButton = (props) => {
       id={props.id}
       type="button"
       className="uk-button uk-button-default uk-margin-small-right navbar-button"
-      type="button"
       data-uk-toggle={
         props.target === undefined ? "" : "target: #offcanvas-usage"
       }

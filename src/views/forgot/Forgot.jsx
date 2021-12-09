@@ -9,7 +9,7 @@ import { colors } from "../../utils/colors";
 
 import { Paragraph } from "../../components/theme/ThemeComponents";
 import { Header3 } from "../../components/theme/headers/Headers";
-import { Label } from "../../components/theme/form/Label";
+import { Label } from "../../components/theme/form/label/Label";
 import Card from "../../components/theme/card/Card";
 
 const Forgot = (props) => {
@@ -63,7 +63,7 @@ const Forgot = (props) => {
             <Paragraph paragraph={props.texts.Paragraph} />
             <form onSubmit={send}>
               <fieldset className="uk-fieldset">
-                <Label text={props.texts.Labels.User} />
+                <Label>{props.texts.Labels.User}</Label>
                 <div className="uk-margin">
                   <input
                     id="name"

@@ -1,17 +1,21 @@
 {
   "ES": {
     "Navbar": {
-      "Placeholders": {
-        "Search": "Buscar chat..."
-      },
-      "Chat": {
-        "States": {
-          "Offline": "desconectado",
-          "Idle": "inactivo",
-          "DontDisturb": "no molestar",
-          "Online": "conectado"
+      "Placeholders": {},
+      "Links": [
+        {
+          "Label": "Catálogo",
+          "To": "/"
+        },
+        {
+          "Label": "Iniciar Sesión",
+          "To": "/login"
+        },
+        {
+          "Label": "Registrarse",
+          "To": "/signup"
         }
-      }
+      ]
     },
     "Notification": {
       "NotConnected": "No tienes conexión con el servidor",
@@ -19,37 +23,66 @@
       "CheckingConnection": "Verificando conexión"
     },
     "Login": {
-      "Title": "Ui-Chat",
-      "Paragraph": "Un lugar donde en el cual las cosas comienzan a tener sentido",
+      "Title": "Iniciar sesión",
+      "Errors": {
+        "WrongUser": "Usuario o contraseña incorrecta",
+        "NotConnected": "No tienes conexión con el servidor"
+      },
       "Buttons": {
         "SignIn": "Inicia sesión",
         "SignUp": "Registrarse",
         "Forgot": "¿Has olvidado tu contraseña?"
       },
       "Labels": {
-        "User": "Usuario",
+        "User": "Nombre de usuario",
         "Password": "Contraseña",
-        "Remember": "Responder..."
+        "Remember": "Recodar"
       },
       "Placeholders": {
-        "User": "Nombre de usuario",
-        "Password": "Contraseña"
+        "Users": [
+          "Ej: R0b3rt0*556",
+          "Ej: S1t0@8943",
+          "Ej: C4rl0sM0r4",
+          "Ej: 1nFant3.6",
+          "Ej: Fr0b0Vr:12"
+        ],
+        "Password": "**********"
       }
     },
     "Main": {
+      "Labels": {
+        "FiltersTitle": "Filtros",
+        "Search": "Buscar:",
+        "Filters": {
+          "Owner": "Dueño",
+          "Color": "Color",
+          "TradeMark": "Marca",
+          "Model": "Modelo",
+          "Price": "Precio"
+        }
+      },
       "Placeholders": {
-        "Message": "Mensaje..."
+        "Owners": [
+          "Ej: FashinDK...",
+          "Ej: RedMonkey...",
+          "Ej: LoQueM4sSePega...",
+          "Ej: KikoYSusMedias...",
+          "Ej: LaMekanika...",
+          "Ej: JorgitoElDeGarzón...",
+          "Ej: DondeEncontrarCosas..."
+        ],
+        "Search": [
+          "Gafas de sol...",
+          "Teclado para pc...",
+          "Monitor...",
+          "Teléfono androide...",
+          "Máquina de coser...",
+          "Televisor...",
+          "Motor de refrigerador..."
+        ]
       },
       "Tooltips": {
         "NotConnected": "No tienes conexión con el servidor. Has clic para reintentar"
-      },
-      "Chat": {
-        "States": {
-          "Offline": "desconectado",
-          "Idle": "inactivo",
-          "DontDisturb": "no molestar",
-          "Online": "conectado"
-        }
       }
     },
     "Account": {},
@@ -69,23 +102,42 @@
       }
     },
     "SignUp": {
-      "Title": "Comienza tu viaje",
-      "Paragraph": "Únete la increible comunidad. Juegos, noticias, amigos y mucho más!",
+      "Title": "Crear cuenta",
       "Buttons": {
         "SignUp": "Registrarse",
         "Return": "Volver al Login"
       },
       "Labels": {
-        "User": "Usuario",
-        "Email": "Email",
+        "User": "Nombre de usuario",
+        "Phone": "Número de teléfono",
+        "Email": "Correo electrónico",
         "Password": "Contraseña",
         "PasswordR": "Repite la contraseña"
       },
       "Placeholders": {
-        "User": "Nombre de usuario",
-        "Email": "Email",
-        "Password": "Contraseña",
-        "PasswordR": "Repite la contraseña"
+        "Users": [
+          "Ej: R0b3rt0*556",
+          "Ej: S1t0@8943",
+          "Ej: C4rl0sM0r4",
+          "Ej: 1nFant3.6",
+          "Ej: Fr0b0Vr:12"
+        ],
+        "Phone": "Ej: + 53 55 55 55",
+        "Emails": [
+          "Ej: r0b3rt0*556@email.com",
+          "Ej: s1t0@8943@email.com",
+          "Ej: c4rl0sm0r4@email.com",
+          "Ej: 1nfant3.6@email.com",
+          "Ej: fr0b0vr:12@email.com"
+        ],
+        "Password": "********",
+        "PasswordR": "********"
+      },
+      "Errors": {
+        "UserNameTaken": "Ya existe un usuario con ese nombre",
+        "EmptyContacts": "Al menos debes tener un medio de contacto",
+        "WrongPassword": "No coinciden las contraseñas",
+        "NotConnected": "No tienes conexión con el servidor"
       }
     }
   },
