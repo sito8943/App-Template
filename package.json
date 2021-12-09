@@ -41,11 +41,12 @@
   },
   "name": "ui-chat",
   "version": "1.0.0",
-  "description": "Chat in react",
+  "description": "React App Template with: SignIn, Signup and Forgot",
   "main": "index.js",
-  "repository": "https://github.com/orlandev/server-express-firebase.git",
+  "repository": "https://github.com/SitoNumbis/App-Template.git",
   "keywords": [
-    "chat",
-    "react"
+    "auth",
+    "react",
+    "sass"
   ]
 }
