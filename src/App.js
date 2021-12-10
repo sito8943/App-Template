@@ -64,16 +64,7 @@ const App = () => {
       }}
     >
       {loading ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100vh",
-          }}
-        >
-          <Loading />
-        </div>
+        <Loading type="big" />
       ) : (
         <Router>
           <Notification texts={GetTexts(contextState.lang, "Notification")} />
