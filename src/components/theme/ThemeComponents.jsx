@@ -25,7 +25,7 @@ export const IconButton = (props) => {
     <button
       id={props.id}
       type="button"
-      className="uk-button uk-button-default uk-margin-small-right navbar-button"
+      className={`uk-button uk-button-default uk-margin-small-right navbar-button ${props.className}`}
       data-uk-toggle={
         props.target === undefined ? "" : "target: #offcanvas-usage"
       }
