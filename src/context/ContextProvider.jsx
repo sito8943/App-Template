@@ -17,31 +17,6 @@ const contextReducer = (contextState, action) => {
         showingNotification: contextState.showingNotification,
       };
     }
-    case "toggleEmojiPanel": {
-      return {
-        user: contextState.user,
-        lang: contextState.lang,
-        mode: contextState.mode,
-        netStatus: contextState.netStatus,
-        showingNotification: contextState.showingNotification,
-      };
-    }
-    case "changeState":
-      console.log(contextState.user.State);
-      console.log(action.state);
-      console.log(States);
-      return {
-        user: new User(
-          contextState.user.Id,
-          contextState.user.Name,
-          action.state,
-          contextState.user.Photo
-        ),
-        lang: contextState.lang,
-        mode: contextState.mode,
-        newStatus: contextState.newStatus,
-        showingNotification: contextState.showingNotification,
-      };
     case "changeMode":
       return {
         user: contextState.user,
