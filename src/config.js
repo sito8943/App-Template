@@ -1,8 +1,23 @@
+const {
+  REACT_APP_API_URL,
+  REACT_APP_JWT_KEY,
+  REACT_APP_USER,
+  REACT_APP_PASSWORD,
+  REACT_APP_USER_COOKIE,
+  REACT_APP_PASSWORD_COOKIE,
+  REACT_APP_VALIDATION_COOKIE,
+  REACT_APP_RECOVERING_COOKIE,
+} = process.env;
+
 const config = {
-    urlEndPoint: "",
-    publicKey: "",
-    reactAuth: '1162efa2884a671b83c80260c1a',
-    serverUrl: "http://localhost:8000"
+  jwtCookie: REACT_APP_JWT_KEY,
+  apiUrl: REACT_APP_API_URL,
+  user: REACT_APP_USER,
+  pass: REACT_APP_PASSWORD,
+  userCookie: REACT_APP_USER_COOKIE,
+  passCookie: REACT_APP_PASSWORD_COOKIE,
+  validationCookie: REACT_APP_VALIDATION_COOKIE,
+  recoveringCookie: REACT_APP_RECOVERING_COOKIE,
 };
 
 export default config;

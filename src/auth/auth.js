@@ -1,9 +1,12 @@
-import { base64encode } from "nodejs-base64";
-import config from "../config"
+// @ts-check
 
-export const user = { name: "react", pass: config.reactAuth };
-export const getAuth = { 
-  Authorization: "Basic " + base64encode(user.name + ":" + user.pass),
+import config from "../config";
+
+// cookies
+import { getCookie } from "../utils/functions";
+
+export const getAuth = {
+  Authorization: `Bearer ${getCookie(config.jwtKey)}`,
   Accept: "application/json",
   "Content-Type": "application/json",
- }
+};

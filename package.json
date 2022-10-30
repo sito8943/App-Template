@@ -1,23 +1,25 @@
 {
   "dependencies": {
-    "axios": "^0.24.0",
-    "blurhash": "^1.1.4",
-    "node-sass": "6.0.1",
-    "nodejs-base64": "^2.0.0",
-    "react": "^17.0.2",
-    "react-blurhash": "^0.1.3",
-    "react-dom": "^17.0.2",
+    "@emotion/css": "^11.10.5",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "axios": "^1.1.3",
+    "env-cmd": "^10.1.0",
+    "md5": "^2.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-hook-form": "^7.21.0",
     "react-icons": "^4.3.1",
-    "react-loader-spinner": "^4.0.0",
     "react-router-dom": "^6.0.2",
-    "react-scripts": "^4.0.3",
-    "react-select": "^5.2.1",
-    "uikit": "^3.9.3"
+    "react-scripts": "^5.0.1",
+    "sito-container": "^0.4.1",
+    "sito-image": "^0.13.1",
+    "sito-mui-tab-view": "^0.5.2",
+    "socket.io-client": "^4.5.3"
   },
   "packageManager": "yarn@3.1.0",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "env-cmd -f .env react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -1,14 +1,31 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import { ContextProvider } from "./context/ContextProvider";
+import * as ReactDOMClient from "react-dom/client";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <ContextProvider>
-      <App />
-    </ContextProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
+// context
+import { ModeProvider } from "./context/ModeProvider";
+import { LanguageProvider } from "./context/LanguageProvider";
+import { NotificationProvider } from "./context/NotificationProvider";
+
+// own components
+import Notification from "./components/Notification/Notification";
+
+// app
+import App from "./App";
+
+// styles
+import "./index.css";
+
+const container = document.getElementById("root");
+
+// Create a root.
+const root = ReactDOMClient.createRoot(container);
+
+root.render(
+  <LanguageProvider>
+    <ModeProvider>
+      <NotificationProvider>
+        <Notification />
+        <App />
+      </NotificationProvider>
+    </ModeProvider>
+  </LanguageProvider>
 );
