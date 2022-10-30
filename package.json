@@ -49,7 +49,6 @@
   "repository": "https://github.com/SitoNumbis/App-Template.git",
   "keywords": [
     "auth",
-    "react",
-    "sass"
+    "react"
   ]
 }
